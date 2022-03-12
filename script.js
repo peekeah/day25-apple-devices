@@ -1,5 +1,11 @@
 //declaring function to create device
 function createDevice({phone_name, image, detail}) {
+
+    //changing protocol from http to https
+    const arr = detail.split(":");
+    arr[0] = "https";
+    detail = arr.join(":");
+
     fetchDetails(detail); //calling function
     //fetching device through API
     async function fetchDetails(url) {
